@@ -42,7 +42,8 @@
     </div>
 
         <script type="text/javascript">
-            let thumbnail = document.getElementsByClassName('thumbnail')
+            
+            let thumbnails = document.getElementsByClassName('thumbnail')
 
             let activeImages = document.getElementsByClassName('active')
 
@@ -52,7 +53,7 @@
                     console.log(activeImages)
 
                     if(activeImages.length > 0){
-                        activeImage[0].classList.remove('active')
+                        activeImages[0].classList.remove('active')
                     }
 
                     this.classList.add('active')
