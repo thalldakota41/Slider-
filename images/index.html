@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="content-wrapper" >
+        
+        <div id="column">
+            <img id='featured' src="images/charlie.jpg">
+            
+            <div id="slide-wrapper">
+                
+                <img id="slideLeft"  class="arrow" src="images/arrow-left.png">
+
+                <div id="slider">
+                    <img  class="thumbnail active" src="images/download.jpeg">
+                    <img  class="thumbnail" src="images/professional.jpg">
+                    <img  class="thumbnail" src="images/subway.jpg">
+                    <img  class="thumbnail" src="images/kaufman.jpeg">
+                    <img  class="thumbnail" src="images/netflix.jpg">
+                    <img  class="thumbnail" src="images/oscars.jpg">
+                </div>
+
+                <img id="slideRight"  class="arrow" src="images/arrow-right.png">
+
+            </div>
+        </div>
+        <div class="column">
+            <h1>Charlie Kaufman</h1>
+            <hr>
+            <h3>Writer</h3>
+
+            <p>Kaufman is a screenwriter know for such works as Dangerous Mind, Eternal Sunshine of the Spotless Mind, Human Nature and Syncedoche New York. He is currently working on his debut novel: Antkind.</p>
+        </div>
+    </div>
+
+        <script type="text/javascript">
+            let thumbnail = document.getElementsByClassName('thumbnail')
+
+            let activeImages = document.getElementsByClassName('active')
+
+            for(var i=0; i < thumbnails.length; i++){
+                
+                thumbnails[i].addEventListener('mouseover', function(){
+                    console.log(activeImages)
+
+                    if(activeImages.length > 0){
+                        activeImage[0].classList.remove('active')
+                    }
+
+                    this.classList.add('active')
+                    document.getElementById('featured').src = this.src
+                })
+            }
+
+            let buttonRight = document.getElementById('slideRight');
+            let buttonLeft = document.getElementById('slideLeft');
+
+            buttonLeft.addEventListener('click', function(){
+                document.getElementById('slider').scrollLeft -= 180
+            })
+
+            buttonRight.addEventListener('click', function(){
+                document.getElementById('slider').scrollLeft += 180
+            })
+
+        </script>
+</body>
+</html>
